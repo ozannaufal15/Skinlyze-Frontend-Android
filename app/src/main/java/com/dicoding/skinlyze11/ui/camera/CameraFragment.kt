@@ -38,10 +38,10 @@ class CameraFragment : Fragment() {
         _binding = FragmentCameraBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        cameraViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        binding.icon_camera.setOnClickListener({
+            startTakePhoto()
+        })
+        
         return root
     }
 
